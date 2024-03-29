@@ -1,0 +1,81 @@
+﻿html, body {
+    margin: 0;
+    height: 100vh;
+}
+
+.column {
+    flex: 1; /* Each column takes up equal space */
+    display: flex; /* Nested flex container for column content */
+    flex-direction: column; /* Arrange content vertically */
+}
+
+.addCollege,
+.addCourse {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #8e86e366;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    border-radius: 5px;
+}
+
+.title {
+    font-family: "Gudea", sans-serif;
+    font-size: 30px;
+    color: blue;
+    border-bottom: 1px solid #8e86e366;
+    width: max-content;
+}
+
+.input-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, 40px);
+    height: 90%;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.input-fields-course {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    height: 90%;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.desc {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.course-desc {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+.saveButton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.field {
+    border: 1px solid #8e86e366;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: "Gudea", sans-serif;
+    outline: none;
+}
+
+.saveButton:hover {
+    cursor: pointer;
+}

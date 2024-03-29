@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CollegeDekhoService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CollegeDekhoService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Course">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SC_closing_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="SC_closing_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="SC_opening_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="SC_opening_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="ST_closing_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="ST_closing_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="ST_opening_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="ST_opening_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="closing_home_state_rank" type="xs:int" />
+      <xs:element minOccurs="0" name="college_id" type="xs:int" />
+      <xs:element minOccurs="0" name="degree" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="duration" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fees" type="xs:decimal" />
+      <xs:element minOccurs="0" name="general_closing_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="general_closing_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="general_opening_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="general_opening_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="general_seat" type="xs:int" />
+      <xs:element minOccurs="0" name="median_salary" type="xs:decimal" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="obc_closing_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="obc_closing_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="obc_opening_rank_Gujcat" type="xs:int" />
+      <xs:element minOccurs="0" name="obc_opening_rank_Jee" type="xs:int" />
+      <xs:element minOccurs="0" name="obc_seat" type="xs:int" />
+      <xs:element minOccurs="0" name="opening_home_state_rank" type="xs:int" />
+      <xs:element minOccurs="0" name="placement_rate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rating" type="xs:decimal" />
+      <xs:element minOccurs="0" name="sc_seat" type="xs:int" />
+      <xs:element minOccurs="0" name="st_seat" type="xs:int" />
+      <xs:element minOccurs="0" name="total_available_seats" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Course" nillable="true" type="tns:Course" />
+  <xs:complexType name="ArrayOfCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourse" nillable="true" type="tns:ArrayOfCourse" />
+</xs:schema>

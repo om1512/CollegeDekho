@@ -1,0 +1,225 @@
+﻿html, body {
+    margin: 0;
+    height: 100vh;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+.container {
+    display: flex; /* Use flexbox to arrange columns */
+    height: max-content; /* Full height of the viewport */
+}
+
+.column {
+    flex: 1; /* Each column takes up equal space */
+    display: flex; /* Nested flex container for column content */
+    flex-direction: column; /* Arrange content vertically */
+}
+
+.addCollege,
+.addCourse {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #8e86e366;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    border-radius: 5px;
+}
+
+.title {
+    font-family: "Gudea", sans-serif;
+    font-size: 30px;
+    color: blue;
+    border-bottom: 1px solid #8e86e366;
+    width: max-content;
+}
+
+.input-fields{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(12, 40px);
+    height: 90%;
+    gap: 5px;
+    margin-top: 10px;
+}
+.input-fields-course {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(12, 40px);
+    height: 90%;
+    gap: 5px;
+    margin-top: 10px;
+}
+.desc{
+    grid-column-start:1;
+    grid-column-end:3;
+    grid-row-start:2;
+    grid-row-end:4;
+}
+
+.course-desc{
+     grid-column-start:1;
+    grid-column-end:5;
+    grid-row-start:2;
+    grid-row-end:4;
+}
+
+.saveButton {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.field {
+    border: 1px solid #8e86e366;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-family: "Gudea", sans-serif;
+    outline: none;
+}
+
+.saveButton:hover{
+    cursor: pointer;
+    
+}
+
+.gridView {
+    border-collapse: collapse;
+    font-family: "Gudea", sans-serif;
+}
+
+    .gridview th, .gridview td {
+        width: 70px;
+    }
+
+.pager {
+    margin-top: 10px;
+}
+
+
+.block{
+    width: max-content;
+    background-color: aqua;
+}
+
+Columns{
+    background-color: antiquewhite;
+}
+
+
+.list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.college-card {
+    margin-bottom: 10px;
+    background-color: #EDEDEE;
+    height: max-content;
+    width: calc(100% - 40px);
+    border-radius: 11px;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+.fields {
+    font-family: "Gudea", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 25px;
+    color: #5037E6;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.university, .loc {
+    color: #5037E6;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+span {
+    border-bottom: 1px solid #FB88B4;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 10px;
+    font-family: "Gudea", sans-serif;
+}
+
+.menu {
+    margin-left: 10px;
+}
+
+    .menu:hover {
+        cursor: pointer;
+        color: black;
+        border-bottom: 1px solid #FB88B4;
+    }
+
+
+
+.line2{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.col2{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.button {
+    border: 1px solid #f65858a6;
+    border-bottom: 4px solid #f65858a6;
+    border-right: 4px solid #f65858a6;
+    border-radius: 5px;
+    font-family: "Gudea", sans-serif;
+    width: 100%;
+    margin-top: 5px;
+}
+    .button:hover {
+        cursor: pointer;
+        border-bottom: 4px solid black;
+        border-right: 4px solid black;
+    }
+.update-button {
+    border: 1px solid #8e86e366;
+    border-bottom: 4px solid #8e86e366;
+    border-right: 4px solid #8e86e366;
+    border-radius: 5px;
+    font-family: "Gudea", sans-serif;
+    width: 100%;
+    margin-top: 5px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+    .update-button:hover {
+        cursor: pointer;
+        border-bottom: 4px solid black;
+        border-right: 4px solid black;
+    }

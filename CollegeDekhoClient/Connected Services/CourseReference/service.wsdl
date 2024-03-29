@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="CourseService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/CollegeDekhoService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICourseService_GetCourseById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseById" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_GetCourseById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourseByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_AddCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_AddCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_UpdateCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_UpdateCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_DeleteCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_DeleteCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_GetCoursesByCollegeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoursesByCollegeId" />
+  </wsdl:message>
+  <wsdl:message name="ICourseService_GetCoursesByCollegeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoursesByCollegeIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICourseService">
+    <wsdl:operation name="GetCourseById">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseService/GetCourseById" message="tns:ICourseService_GetCourseById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseService/GetCourseByIdResponse" message="tns:ICourseService_GetCourseById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseService/AddCourse" message="tns:ICourseService_AddCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseService/AddCourseResponse" message="tns:ICourseService_AddCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseService/UpdateCourse" message="tns:ICourseService_UpdateCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseService/UpdateCourseResponse" message="tns:ICourseService_UpdateCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseService/DeleteCourse" message="tns:ICourseService_DeleteCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseService/DeleteCourseResponse" message="tns:ICourseService_DeleteCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesByCollegeId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICourseService/GetCoursesByCollegeId" message="tns:ICourseService_GetCoursesByCollegeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICourseService/GetCoursesByCollegeIdResponse" message="tns:ICourseService_GetCoursesByCollegeId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICourseService" type="tns:ICourseService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCourseById">
+      <soap:operation soapAction="http://tempuri.org/ICourseService/GetCourseById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseService/AddCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseService/UpdateCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourse">
+      <soap:operation soapAction="http://tempuri.org/ICourseService/DeleteCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoursesByCollegeId">
+      <soap:operation soapAction="http://tempuri.org/ICourseService/GetCoursesByCollegeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CourseService">
+    <wsdl:port name="BasicHttpBinding_ICourseService" binding="tns:BasicHttpBinding_ICourseService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/CollegeDekhoService/CourseService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,115 @@
+﻿/* style.css */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.college-card a {
+    text-decoration: none; /* Remove underline */
+}
+
+.fixed {
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+}
+
+
+input {
+    width: calc(100% - 15px);
+    height: 50px;
+    border-radius: 11px;
+    background-color: #EDEDEE;
+    border: none;
+    border-bottom: 4px solid #F9F07A;
+    border-right: 4px solid #F9F07A;
+    font-family: "Gudea", sans-serif;
+    outline: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.place {
+    width: 700px;
+}
+
+.list-container {
+    height: calc(100vh - 50px - 142px); /* Adjust height based on logo height and input height */
+    max-height: calc(100vh - 50px - 142px); /* Added max-height for responsiveness */
+    background-color: aqua;
+    overflow-y: auto; /* Make container scrollable vertically */
+    position: relative; /* Add position relative */
+    margin-top: 50px; /* Adjust margin top to push the list below the input */
+}
+
+.college-card {
+    margin-bottom: 10px;
+    background-color: #EDEDEE;
+    height: max-content;
+    width: calc(100% - 25px);
+    border-radius: 11px;
+    border-bottom: 4px solid blue;
+    border-right: 4px solid blue;
+    padding: 10px;
+}
+
+    .college-card:hover {
+        cursor: pointer;
+        border-bottom: 4px solid #FB88B4;
+        border-right: 4px solid #FB88B4;
+    }
+
+    .field {
+        font-family: "Gudea", sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+.title {
+    font-size: 25px;
+    color: #5037E6;
+    margin-bottom: 10px;
+}
+
+.university, .loc {
+    color: #5037E6;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+span {
+    border-bottom: 1px solid #FB88B4;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 10px;
+    font-family: "Gudea", sans-serif;
+}
+
+.menu{
+    margin-left:10px;
+}
+
+    .menu:hover {
+        cursor: pointer;
+        color: black;
+        border-bottom: 1px solid #FB88B4;
+    }
+
