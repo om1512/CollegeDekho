@@ -12,27 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
-    <script>
-        function searchStudents() {
-            var input, filter, studentsContainer, cards, card, title, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            studentsContainer = document.getElementById("studentsContainer");
-            cards = studentsContainer.getElementsByClassName("card");
-            for (i = 0; i < cards.length; i++) {
-                card = cards[i];
-                title = card.getElementsByClassName("card-title")[0];
-                txtValue = title.textContent || title.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    card.style.display = "";
-                } else {
-                    card.style.display = "none";
-                }
-            }
-        }
-    </script>
-
 </head>
 <body>
     <form id="form1" runat="server">
