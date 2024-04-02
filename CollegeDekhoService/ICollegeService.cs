@@ -33,7 +33,7 @@ namespace CollegeDekhoService
         void DeleteCollegeById(int id);
 
         [OperationContract]
-        void UpdateCollegeById(int id, College college);
+        string UpdateCollegeById(int id, College college);
 
     }
 }

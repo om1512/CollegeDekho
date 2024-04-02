@@ -51,6 +51,7 @@
                     <asp:TextBox runat="server" ID="NAAC" CssClass="field" placeholder="NAAC"/>
                     <asp:TextBox runat="server" ID="NIRF" CssClass="field" placeholder="NIRF"/>
                     <asp:Button runat="server" ID="save" CssClass="saveButton field" Text="Save" OnClick="save_Click"/>
+                    <asp:Label runat="server" ID="testLabel" />
                 </div>
             </div>
         </div>

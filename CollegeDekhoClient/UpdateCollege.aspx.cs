@@ -1,6 +1,7 @@
 ﻿using CollegeDekhoClient.CollegeReference;
 using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
@@ -12,7 +13,6 @@ namespace CollegeDekhoClient
     public partial class UpdateCollege : System.Web.UI.Page
     {
         CollegeReference.CollegeServiceClient cs = new CollegeReference.CollegeServiceClient();
-        int id = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["isAdminAuthenticated"] == null || !(bool)Session["isAdminAuthenticated"])
@@ -24,7 +24,8 @@ namespace CollegeDekhoClient
                 if (!string.IsNullOrEmpty(Request.QueryString["collegeId"]))
                 {
                     string collegeId = Request.QueryString["collegeId"];
-                    id = int.Parse(collegeId);
+                    int id = int.Parse(collegeId);
+                    testLabel.Text =  " ID "+ id.ToString();
                     College college = cs.GetCollegeById(id);
                     name.Text = college.Name;
                     description.Text = college.Description;
@@ -66,7 +67,13 @@ namespace CollegeDekhoClient
             college.Sports = sports.Text;
             college.NAAC = NAAC.Text;
             college.NIRF = NIRF.Text;
-            cs.UpdateCollegeById(id, college);
+            if (!string.IsNullOrEmpty(Request.QueryString["collegeId"]))
+            {
+                string collegeId = Request.QueryString["collegeId"];
+                int id = int.Parse(collegeId);
+                string response = cs.UpdateCollegeById(id, college);
+                Response.Redirect("AdminDashboard.aspx");
+            }
         }
     }
 }

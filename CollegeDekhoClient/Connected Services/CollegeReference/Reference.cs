@@ -377,10 +377,10 @@ namespace CollegeDekhoClient.CollegeReference {
         System.Threading.Tasks.Task DeleteCollegeByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICollegeService/UpdateCollegeById", ReplyAction="http://tempuri.org/ICollegeService/UpdateCollegeByIdResponse")]
-        void UpdateCollegeById(int id, CollegeDekhoClient.CollegeReference.College college);
+        string UpdateCollegeById(int id, CollegeDekhoClient.CollegeReference.College college);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICollegeService/UpdateCollegeById", ReplyAction="http://tempuri.org/ICollegeService/UpdateCollegeByIdResponse")]
-        System.Threading.Tasks.Task UpdateCollegeByIdAsync(int id, CollegeDekhoClient.CollegeReference.College college);
+        System.Threading.Tasks.Task<string> UpdateCollegeByIdAsync(int id, CollegeDekhoClient.CollegeReference.College college);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -466,11 +466,11 @@ namespace CollegeDekhoClient.CollegeReference {
             return base.Channel.DeleteCollegeByIdAsync(id);
         }
         
-        public void UpdateCollegeById(int id, CollegeDekhoClient.CollegeReference.College college) {
-            base.Channel.UpdateCollegeById(id, college);
+        public string UpdateCollegeById(int id, CollegeDekhoClient.CollegeReference.College college) {
+            return base.Channel.UpdateCollegeById(id, college);
         }
         
-        public System.Threading.Tasks.Task UpdateCollegeByIdAsync(int id, CollegeDekhoClient.CollegeReference.College college) {
+        public System.Threading.Tasks.Task<string> UpdateCollegeByIdAsync(int id, CollegeDekhoClient.CollegeReference.College college) {
             return base.Channel.UpdateCollegeByIdAsync(id, college);
         }
     }

@@ -82,7 +82,7 @@ namespace CollegeDekhoClient
             LinkButton linkButton = (LinkButton)sender;
             string collegeId = linkButton.CommandArgument;
 
-            Response.Redirect("UpdateCollege.aspx?collegeId=" + collegeId);
+            Response.Redirect("UpdateCollege.aspx?collegeId="+collegeId);
         }
 
         protected void deleteButton(object sender, EventArgs e)

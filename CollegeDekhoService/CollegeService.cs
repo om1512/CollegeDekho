@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Text;
@@ -265,7 +266,7 @@ namespace CollegeDekhoService
 
                 SqlCommand command = connection.CreateCommand();
 
-                command.CommandText = "INSERT INTO College (name, [desc], university, place, established, imageUrl, phone, email, website, [type], campusSize, gyn, canteen, sports, NAAC, NIRF, library) VALUES (@Name, @Description, @University, @Place, @Established, @ImageUrl, @Phone, @Email, @Website, @Type, @CampusSize, @Gyn, @Canteen, @Sports, @NAAC, @NIRF, @Library);\r\n";
+                command.CommandText = "INSERT INTO College (name, [desc], university, place, established, imageUrl, phone, email, website, [type], campusSize, gyn, canteen, sports, NAAC, NIRF, library) VALUES (@Name, @Description, @University, @Place, @Established, @ImageUrl, @Phone, @Email, @Website, @Type, @CampusSize, @Gyn, @Canteen, @Sports, @NAAC, @NIRF, @Library);";
 
                 command.Parameters.AddWithValue("@Name", college.Name);
                 command.Parameters.AddWithValue("@University", college.University);
@@ -295,32 +296,41 @@ namespace CollegeDekhoService
             throw new NotImplementedException();
         }
 
-        public void UpdateCollegeById(int id, College college)
+        public string UpdateCollegeById(int id, College college)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                connection.Open();
-                SqlCommand command = connection.CreateCommand();
-                command.CommandText = "UPDATE College SET name = @Name, [desc] = @Description, university = @University, place = @Place, established = @Established, imageUrl = @ImageUrl, phone = @Phone, email = @Email, website = @Website, [type] = @Type, campusSize = @CampusSize, gyn = @Gyn, canteen = @Canteen, sports = @Sports, NAAC = @NAAC, NIRF = @NIRF, library = @Library WHERE Id = @Id";
-                command.Parameters.AddWithValue("@Id", id);
-                command.Parameters.AddWithValue("@Name", college.Name);
-                command.Parameters.AddWithValue("@Description", college.Description);
-                command.Parameters.AddWithValue("@University", college.University);
-                command.Parameters.AddWithValue("@Place", college.Place);
-                command.Parameters.AddWithValue("@Established", college.Established);
-                command.Parameters.AddWithValue("@ImageUrl", college.ImageUrl);
-                command.Parameters.AddWithValue("@Phone", college.Phone);
-                command.Parameters.AddWithValue("@Email", college.Email);
-                command.Parameters.AddWithValue("@Website", college.Website);
-                command.Parameters.AddWithValue("@Type", college.Type);
-                command.Parameters.AddWithValue("@CampusSize", college.CampusSize);
-                command.Parameters.AddWithValue("@Gyn", college.Gyn);
-                command.Parameters.AddWithValue("@Canteen", college.Canteen);
-                command.Parameters.AddWithValue("@Sports", college.Sports);
-                command.Parameters.AddWithValue("@NAAC", college.NAAC);
-                command.Parameters.AddWithValue("@NIRF", college.NIRF);
-                command.Parameters.AddWithValue("@Library", college.Library);
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    SqlCommand command = connection.CreateCommand();
+                    command.CommandText = "UPDATE College SET name = @Name, [desc] = @Description, university = @University, place = @Place, established = @Established, imageUrl = @ImageUrl, phone = @Phone, email = @Email, website = @Website, [type] = @Type, campusSize = @CampusSize, gyn = @Gyn, canteen = @Canteen, sports = @Sports, NAAC = @NAAC, NIRF = @NIRF, library = @Library WHERE Id = @Id";
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@Name", college.Name);
+                    command.Parameters.AddWithValue("@Description", college.Description);
+                    command.Parameters.AddWithValue("@University", college.University);
+                    command.Parameters.AddWithValue("@Place", college.Place);
+                    command.Parameters.AddWithValue("@Established", college.Established);
+                    command.Parameters.AddWithValue("@ImageUrl", college.ImageUrl);
+                    command.Parameters.AddWithValue("@Phone", college.Phone);
+                    command.Parameters.AddWithValue("@Email", college.Email);
+                    command.Parameters.AddWithValue("@Website", college.Website);
+                    command.Parameters.AddWithValue("@Type", college.Type);
+                    command.Parameters.AddWithValue("@CampusSize", college.CampusSize);
+                    command.Parameters.AddWithValue("@Gyn", college.Gyn);
+                    command.Parameters.AddWithValue("@Canteen", college.Canteen);
+                    command.Parameters.AddWithValue("@Sports", college.Sports);
+                    command.Parameters.AddWithValue("@NAAC", college.NAAC);
+                    command.Parameters.AddWithValue("@NIRF", college.NIRF);
+                    command.Parameters.AddWithValue("@Library", college.Library);
+                    command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    return "Error : " + ex;
+                }
+                return "successfully updated...";
             }
         }
     }
