@@ -25,6 +25,8 @@ In summary, College Dekho stands as a premier destination for college exploratio
 | <img src="https://github.com/om1512/CollegeDekho/blob/master/screenshots/5.png" /> |
 | Update / Delete College |
 | <img src="https://github.com/om1512/CollegeDekho/blob/master/screenshots/6.png" /> |
+| Update college |
+| <img src="https://github.com/om1512/CollegeDekho/blob/master/screenshots/Screenshot%202024-04-03%20092113.png" />
 
 
 <b>just pure simplicity at your fingertips.</b> Give A Star 🌟
